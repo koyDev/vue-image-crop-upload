@@ -272,8 +272,8 @@ export default {
 
 			// 原图容器宽高
 			sourceImgContainer: { // sic
-				width: 240,
-				height: 184 // 如果生成图比例与此一致会出现bug，先改成特殊的格式吧，哈哈哈
+				width: 320,
+				height: 180 // 如果生成图比例与此一致会出现bug，先改成特殊的格式吧，哈哈哈
 			},
 
 			// 原图展示属性
@@ -1062,7 +1062,7 @@ export default {
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
           position: relative;
           display: block;
-          width: 240px;
+          width: 320px;
           height: 180px;
           background-color: #e5e5e0;
           overflow: hidden; }
@@ -1122,13 +1122,15 @@ export default {
             width: 18px;
             height: 18px;
             border-radius: 100%;
-            background-color: rgba(0, 0, 0, 0.08); }
+						/* background-color: rgba(0, 0, 0, 0.08);  */
+						}
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon5:hover,
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6:hover {
-              -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+              /* -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
                       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+							background-color: rgba(0, 0, 0, 0.14);  */
               cursor: pointer;
-              background-color: rgba(0, 0, 0, 0.14); }
+							}
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon5 {
             left: 0; }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon5::before {
@@ -1139,7 +1141,7 @@ export default {
               top: 8px;
               width: 12px;
               height: 2px;
-              background-color: #fff; }
+              background-color: #000; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6 {
             right: 0; }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6::before {
@@ -1150,7 +1152,7 @@ export default {
               top: 8px;
               width: 12px;
               height: 2px;
-              background-color: #fff; }
+              background-color: #000; }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6::after {
               position: absolute;
               content: '';
@@ -1159,13 +1161,13 @@ export default {
               left: 8px;
               width: 2px;
               height: 12px;
-              background-color: #fff; }
+              background-color: #000; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range input[type=range] {
             display: block;
             padding-top: 5px;
             margin: 0 auto;
             width: 180px;
-            height: 8px;
+            height: 13px;
             vertical-align: top;
             background: transparent;
             -webkit-appearance: none;
