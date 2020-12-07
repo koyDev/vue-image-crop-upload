@@ -45,6 +45,7 @@
 							@mouseup="createImg"
 							@mouseout="createImg"
 							ref="img">
+						<div class="cs-overlay"></div>
 						<div class="vicp-img-shade vicp-img-shade-1" :style="sourceImgShadeStyle"></div>
 						<div class="vicp-img-shade vicp-img-shade-2" :style="sourceImgShadeStyle"></div>
 					</div>
@@ -272,8 +273,8 @@ export default {
 
 			// 原图容器宽高
 			sourceImgContainer: { // sic
-				width: 320,
-				height: 180 // 如果生成图比例与此一致会出现bug，先改成特殊的格式吧，哈哈哈
+				width: 240,
+				height: 184 // 如果生成图比例与此一致会出现bug，先改成特殊的格式吧，哈哈哈
 			},
 
 			// 原图展示属性
@@ -1062,7 +1063,7 @@ export default {
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
           position: relative;
           display: block;
-          width: 320px;
+          width: 240px;
           height: 180px;
           background-color: #e5e5e0;
           overflow: hidden; }
@@ -1081,10 +1082,12 @@ export default {
             background-color: rgba(241, 242, 243, 0.8); }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img-shade.vicp-img-shade-1 {
               top: 0;
-              left: 0; }
+              left: 0; 
+			  display: none;}
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img-shade.vicp-img-shade-2 {
               bottom: 0;
-              right: 0; }
+              right: 0; 
+			  display: none;}
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-rotate {
           position: relative;
           width: 240px;
@@ -1122,15 +1125,13 @@ export default {
             width: 18px;
             height: 18px;
             border-radius: 100%;
-						/* background-color: rgba(0, 0, 0, 0.08);  */
-						}
+            background-color: rgba(0, 0, 0, 0.08); }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon5:hover,
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6:hover {
-              /* -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+              -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
                       box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12);
-							background-color: rgba(0, 0, 0, 0.14);  */
               cursor: pointer;
-							}
+              background-color: rgba(0, 0, 0, 0.14); }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon5 {
             left: 0; }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon5::before {
@@ -1141,7 +1142,7 @@ export default {
               top: 8px;
               width: 12px;
               height: 2px;
-              background-color: #000; }
+              background-color: #fff; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6 {
             right: 0; }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6::before {
@@ -1152,7 +1153,7 @@ export default {
               top: 8px;
               width: 12px;
               height: 2px;
-              background-color: #000; }
+              background-color: #fff; }
             .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range .vicp-icon6::after {
               position: absolute;
               content: '';
@@ -1161,13 +1162,13 @@ export default {
               left: 8px;
               width: 2px;
               height: 12px;
-              background-color: #000; }
+              background-color: #fff; }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-range input[type=range] {
             display: block;
             padding-top: 5px;
             margin: 0 auto;
             width: 180px;
-            height: 13px;
+            height: 8px;
             vertical-align: top;
             background: transparent;
             -webkit-appearance: none;
@@ -1457,5 +1458,22 @@ export default {
     transition: opacity 1.2s ease-out, -webkit-transform 0.6s ease-out;
     transition: opacity 1.2s ease-out, transform 0.6s ease-out;
     transition: opacity 1.2s ease-out, transform 0.6s ease-out, -webkit-transform 0.6s ease-out; }
-
+.cs-overlay{
+	position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.cs-overlay:after{
+	content: '';
+  border-radius: 100%;
+  width: 178px;
+  height: 178px;
+  box-shadow: 0px 0px 0px 2000px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0px 0px 0px 2000px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0px 0px 0px 2000px rgba(255, 255, 255, 0.5);
+  align-self: center;
+}
 </style>
