@@ -451,14 +451,11 @@ export default {
 			return false;
 		},
 		handleClick(e) {
-			// if (this.loading !== 1) {
-			// 	if (e.target !== this.$refs.fileinput) {
-			// 		e.preventDefault();
-			// 		if (document.activeElement !== this.$refs) {
-						this.$refs.fileinput.click();
-			// 		}
-			// 	}
-			// }
+			if (this.loading !== 1) {
+				if (document.activeElement !== this.$refs) {
+					this.$refs.fileinput.click();
+				}
+			}
 		},
 		handleChange(e) {
 			e.preventDefault();
@@ -469,6 +466,7 @@ export default {
 					this.setSourceImg(files[0]);
 				}
 			}
+			
 		},
 		/* ---------------------------------------------------------------*/
 
@@ -949,7 +947,7 @@ export default {
             transform: scale(1) translatey(0); } }
 
 .vue-image-crop-upload {
-  position: fixed;
+  /* position: fixed;
   display: block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -962,7 +960,8 @@ export default {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
   -webkit-tap-highlight-color: transparent;
-  -moz-tap-highlight-color: transparent; }
+  -moz-tap-highlight-color: transparent;  */
+  }
   .vue-image-crop-upload .vicp-wrap {
     -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.23);
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.23);
@@ -976,7 +975,7 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
-    width: 510px;
+    width: calc(var(--cs_widht) + 60px);
     height: max-content;
     padding: 25px;
     background-color: #fff;
