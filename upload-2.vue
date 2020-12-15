@@ -1,14 +1,9 @@
 <template>
 <div  @click.stop class="vue-image-crop-upload" v-show="value">
-	<style>
-		:root{
-			--cs_widht: {{ passwidth + 'px'}};
-			--cs_height: {{ passheight }};
-		}
-	</style>
 	<div 
 		class="vicp-wrap"
 		:class="{'pstep1' : step === 1}"
+		:style="conwidth"
 	>
 		<div>
 			<div class="vicp-close" @click="off">
@@ -37,7 +32,7 @@
 			<div class="vicp-step2" v-if="step == 2">
 				<div class="vicp-crop">
 					<div class="vicp-crop-left" v-show="true">
-						<div class="vicp-img-container">
+						<div class="vicp-img-container" :style="conwidth2">
 							<img :src="sourceImgUrl" :style="sourceImgStyle" class="vicp-img" draggable="false"
 								@drag="preventDefault"
 								@dragstart="preventDefault"
@@ -211,12 +206,12 @@ export default {
 			'default': 'POST'
 		},
 		passwidth: {
-			type: String,
-			'default': '440'
+			type: Number,
+			'default': 440
 		},
 		passheight: {
-			type: String,
-			'default': '184'
+			type: Number,
+			'default': 184
 		}
 	},
 	data() {
@@ -329,6 +324,22 @@ export default {
 			}
 		},
 		// 原图样式
+		conwidth() {
+			let {
+				passwidth
+			} = this
+			return {
+				width: passwidth + 60 + 'px'
+			}
+		},
+		conwidth2() {
+			let {
+				passwidth
+			} = this
+			return {
+				width: passwidth + 'px'
+			}
+		},
 		sourceImgStyle() {
 			let {
 					scale,
@@ -975,7 +986,6 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
-    width: calc(var(--cs_widht) + 60px);
     height: max-content;
     padding: 25px;
     background-color: #fff;
@@ -1091,7 +1101,6 @@ export default {
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
           position: relative;
           display: block;
-          width: var(--cs_widht);
           height: 240px;
           background-color: #e5e5e0;
           overflow: hidden; 
