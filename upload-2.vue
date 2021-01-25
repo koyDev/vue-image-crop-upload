@@ -970,7 +970,11 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
+<<<<<<< HEAD
     /* width: 500px; */
+=======
+    width: 500px;
+>>>>>>> 24a7d1e2d21a920e8f3cbbc49ba6aff61a42e3af
     height: max-content;
     padding: 25px;
     background-color: #fff;
@@ -979,7 +983,11 @@ export default {
 	animation: vicp 0.12s ease-in; }
 	@media screen (max-width: 730px) {
 		.vue-image-crop-upload .vicp-wrap {
+<<<<<<< HEAD
 			/* width: 380px; */
+=======
+			width: 380px;
+>>>>>>> 24a7d1e2d21a920e8f3cbbc49ba6aff61a42e3af
 		}
 	}
 	.vue-image-crop-upload .vicp-wrap > div{
@@ -1091,7 +1099,11 @@ export default {
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
           position: relative;
           display: block;
+<<<<<<< HEAD
           /* width: 440px; */
+=======
+          width: 440px;
+>>>>>>> 24a7d1e2d21a920e8f3cbbc49ba6aff61a42e3af
           height: 240px;
           background-color: #e5e5e0;
           overflow: hidden; 
@@ -1099,7 +1111,11 @@ export default {
 		  }
 		  @media screen (max-width: 730px) {
 			  .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
+<<<<<<< HEAD
 				  /* width: 320px; */
+=======
+				  width: 320px;
+>>>>>>> 24a7d1e2d21a920e8f3cbbc49ba6aff61a42e3af
 			  }
 		  }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img {
