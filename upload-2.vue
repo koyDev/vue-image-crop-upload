@@ -3,7 +3,7 @@
 	<div 
 		class="vicp-wrap"
 		:class="{'pstep1' : step === 1}"
-		:style="conwidth"
+		:width="passwidth+60 + 'px'"
 	>
 		<div>
 			<div class="vicp-close" @click="off">
@@ -32,8 +32,8 @@
 			<div class="vicp-step2" v-if="step == 2">
 				<div class="vicp-crop">
 					<div class="vicp-crop-left" v-show="true">
-						<div class="vicp-img-container" :style="conwidth2">
-							<img :src="sourceImgUrl" :style="sourceImgStyle" class="vicp-img" draggable="false"
+						<div class="vicp-img-container">
+							<img :src="sourceImgUrl" :style="sourceImgStyle" class="vicp-img" draggable="false" :width="passwidth"
 								@drag="preventDefault"
 								@dragstart="preventDefault"
 								@dragend="preventDefault"
@@ -206,12 +206,12 @@ export default {
 			'default': 'POST'
 		},
 		passwidth: {
-			type: [Number, String],
-			'default': 440
+			type: [String, Number],
+			'default': '440'
 		},
 		passheight: {
-			type: [Number, String],
-			'default': 184
+			type: [String, Number],
+			'default': '184'
 		}
 	},
 	data() {
@@ -324,22 +324,6 @@ export default {
 			}
 		},
 		// 原图样式
-		conwidth() {
-			let {
-				passwidth
-			} = this
-			return {
-				width: passwidth + 60 + 'px'
-			}
-		},
-		conwidth2() {
-			let {
-				passwidth
-			} = this
-			return {
-				width: passwidth + 'px'
-			}
-		},
 		sourceImgStyle() {
 			let {
 					scale,
@@ -986,12 +970,18 @@ export default {
     left: 0;
     right: 0;
     margin: auto;
+    /* width: 500px; */
     height: max-content;
     padding: 25px;
     background-color: #fff;
     border-radius: 2px;
     -webkit-animation: vicp 0.12s ease-in;
 	animation: vicp 0.12s ease-in; }
+	@media screen (max-width: 730px) {
+		.vue-image-crop-upload .vicp-wrap {
+			/* width: 380px; */
+		}
+	}
 	.vue-image-crop-upload .vicp-wrap > div{
 		position: relative;
 	}
@@ -1101,10 +1091,16 @@ export default {
         .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
           position: relative;
           display: block;
+          /* width: 440px; */
           height: 240px;
           background-color: #e5e5e0;
           overflow: hidden; 
 			margin: auto;
+		  }
+		  @media screen (max-width: 730px) {
+			  .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container {
+				  /* width: 320px; */
+			  }
 		  }
           .vue-image-crop-upload .vicp-wrap .vicp-step2 .vicp-crop .vicp-crop-left .vicp-img-container .vicp-img {
             position: absolute;
