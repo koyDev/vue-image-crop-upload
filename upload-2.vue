@@ -206,11 +206,11 @@ export default {
 			'default': 'POST'
 		},
 		passwidth: {
-			type: Number,
+			type: [Number, String],
 			'default': 440
 		},
 		passheight: {
-			type: Number,
+			type: [Number, String],
 			'default': 184
 		}
 	},
