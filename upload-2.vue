@@ -536,7 +536,7 @@ export default {
 				if (nWidth < width || nHeight < height) {
 					that.hasError = true;
 					that.errorMsg = lang.error.lowestPx + width + '*' + height;
-					alert(that.error.Msg)
+					alert(that.errorMsg)
 					return false;
 				}
 				if (ratio > nRatio) {
